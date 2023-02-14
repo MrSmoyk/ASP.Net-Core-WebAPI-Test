@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "j1WOX7nyrRtqDn14TOn3MBcl/1EmaJownnJWcrNp8Q0OuSR3d7wHlpBR8qCb3N8lfwV89Vb6qokxpUhVDj9JiA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MrSmoyk\\source\\repos\\MyGit\\ASP.Net-Core-WebAPI-Test\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MrSmoyk\\.nuget\\packages\\system.linq.dynamic.core\\1.2.25\\system.linq.dynamic.core.1.2.25.nupkg.sha512"
+  ],
+  "logs": []
+}

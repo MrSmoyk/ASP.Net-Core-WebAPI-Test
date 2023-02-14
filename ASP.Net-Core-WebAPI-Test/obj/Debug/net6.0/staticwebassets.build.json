@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "TTIgqNtCs5TFEAZT8c7nzi7svWXvmknW9j6HahbNNIc=",
+  "Source": "ASP.Net-Core-WebAPI-Test",
+  "BasePath": "_content/ASP.Net-Core-WebAPI-Test",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
