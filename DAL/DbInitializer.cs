@@ -1,10 +1,5 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -26,6 +21,10 @@ namespace DAL
                 dbContext.SaveChangesAsync();
             }
 
+            foreach (var entity in dbContext.ChangeTracker.Entries())
+            {
+                entity.State = EntityState.Detached;
+            }
 
         }
     }

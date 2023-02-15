@@ -3,14 +3,7 @@ using DAL.Interfaces;
 using Domain.DTOs;
 using Domain.Entities;
 using Domain.Helpers;
-using Microsoft.EntityFrameworkCore;
 using Service.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Implementations
 {

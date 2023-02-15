@@ -1,4 +1,5 @@
-﻿using Domain.DTOs.DogDTOs;
+﻿using ASP.Net_Core_WebAPI_Test.Decorators;
+using Domain.DTOs.DogDTOs;
 using Domain.Params;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -18,6 +19,7 @@ namespace ASP.Net_Core_WebAPI_Test.Controllers
         }
 
         [HttpGet]
+        [RequestsLimit(MaxRequests = 10, TimeWindow = 10)]
         public async Task<IActionResult> GetAllDogs([FromQuery] DogParameters ownerParameters)
         {
             var dogs = await dogService.GetAllDogsAsync(ownerParameters);
@@ -38,6 +40,7 @@ namespace ASP.Net_Core_WebAPI_Test.Controllers
         }
 
         [HttpGet("{id}")]
+        [RequestsLimit(MaxRequests = 10, TimeWindow = 10)]
         public async Task<ActionResult<DogDTO>> GetByIdAsync(int id)
         {
             var dogFromId = await dogService.GetByIdAsync(id);
@@ -45,12 +48,29 @@ namespace ASP.Net_Core_WebAPI_Test.Controllers
         }
 
         [HttpPost]
+        [RequestsLimit(MaxRequests = 5, TimeWindow = 10)]
         public async Task<ActionResult<DogDTO>> CreateAsync([FromBody] DogCreateUpdateDTO newDog)
         {
 
-                var createdDog = await dogService.CreateDogAsync(newDog);
+            var createdDog = await dogService.CreateDogAsync(newDog);
 
             return Created(nameof(GetAllDogs), createdDog);
+        }
+
+        [HttpPut("{id}")]
+        [RequestsLimit(MaxRequests = 5, TimeWindow = 10)]
+        public async Task<ActionResult<DogDTO>> UpdateAsync(int id, [FromBody] DogCreateUpdateDTO updatedOperation)
+        {
+            var update = await dogService.UpdateDogAsync(id, updatedOperation);
+            return Ok(update);
+        }
+
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<DogDTO>> DeleteAsync(int id)
+        {
+            await dogService.DeleteAsync(id);
+            return Ok();
         }
     }
 }

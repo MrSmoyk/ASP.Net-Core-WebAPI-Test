@@ -1,18 +1,11 @@
 ﻿using AutoMapper;
 using DAL.Interfaces;
-using DAL.Repositories;
 using Domain.DTOs.DogDTOs;
 using Domain.Entities;
 using Domain.Exceptions;
 using Domain.Helpers;
 using Domain.Params;
-using Microsoft.EntityFrameworkCore;
 using Service.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Implementations
 {
